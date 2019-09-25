@@ -12,8 +12,8 @@ import java.time.format.DateTimeFormatter;
  * @date 2019/8/28 11:00
  * @description
  */
-public final class DateTimeFormatters {
-    private DateTimeFormatters(){}
+public final class DateFormats {
+    private DateFormats(){}
     public static final DateTimeFormatter yyyyMMdd = DateTimeFormatter.ofPattern("yyyyMMdd");
     public static final DateTimeFormatter yyyyMMddHHmmss = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
     public static final DateTimeFormatter yyyy_MM_dd = DateTimeFormatter.ofPattern("yyyy_MM_dd");
