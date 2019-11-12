@@ -1,6 +1,9 @@
 package jdkguide.stream;
 
+import com.google.common.base.Splitter;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
+import org.junit.Test;
 
 import java.util.List;
 import java.util.Map;
@@ -37,5 +40,12 @@ public class CollectorGuide {
     public void collectingAndThen(){
         Map<Integer,Point> map=points.stream()
                 .collect(Collectors.groupingBy(Point::getX,Collectors.collectingAndThen(Collectors.toList(),list->list.get(0))));
+    }
+
+    @Test
+    public void join(){
+        String word= Splitter.fixedLength(1).splitToList("Payno").stream()
+                .collect(Collectors.joining("-","[","]"));
+        System.out.printf("%s",word);
     }
 }

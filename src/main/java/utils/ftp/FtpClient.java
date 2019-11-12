@@ -4,6 +4,7 @@ package utils.ftp;
 import com.google.common.base.Charsets;
 import com.google.common.base.Joiner;
 import com.google.common.base.Splitter;
+import com.google.common.collect.ImmutableList;
 import com.google.common.io.Files;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -205,7 +206,26 @@ public class FtpClient implements AutoCloseable {
         });
         return this;
     }
-    
+
+    public List<FTPFile> listDirs(){
+        FTPFile[] ftpDirs=null;
+        try{
+            ftpDirs=ftpClient.listDirectories();
+        }catch (IOException e){
+            throw new FtpException(ip,port,name,pass,FtpException.OTHER_EXCEPTION);
+        }
+        return ImmutableList.copyOf(ftpDirs);
+    }
+
+    public List<FTPFile> listFiles(){
+        FTPFile[] ftpFiles=null;
+        try{
+            ftpFiles=ftpClient.listFiles();
+        }catch (IOException e){
+            throw new FtpException(ip,port,name,pass,FtpException.OTHER_EXCEPTION);
+        }
+        return ImmutableList.copyOf(ftpFiles);
+    }
 
     @Override
     public void close() {

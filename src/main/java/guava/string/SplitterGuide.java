@@ -27,6 +27,7 @@ public class SplitterGuide {
             }
         });
         Splitter.fixedLength(5);
+        Splitter.on(CharMatcher.javaIsoControl().negate());
     }
     /**
      * 修饰器:去除结果中的Null字符串

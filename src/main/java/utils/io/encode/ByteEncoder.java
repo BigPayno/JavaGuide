@@ -4,8 +4,8 @@ import com.google.common.io.ByteSink;
 import com.google.common.io.ByteSource;
 import com.google.common.io.FileWriteMode;
 import com.google.common.io.Files;
-import com.gz.parser.core.utils.io.file.FileUtils;
 import lombok.extern.slf4j.Slf4j;
+import utils.io.file.FileUtils;
 
 import java.io.BufferedInputStream;
 import java.io.File;

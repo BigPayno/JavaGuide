@@ -12,7 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @date 2019/8/19 16:33
  * @description
  */
-public class LocalDateTimeGuide {
+public class  LocalDateTimeGuide {
     private static void staticFactory(){
         LocalDate localDate=LocalDate.now();
         LocalTime localTime=LocalTime.now();

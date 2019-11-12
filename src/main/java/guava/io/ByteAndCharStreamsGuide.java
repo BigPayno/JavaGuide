@@ -16,7 +16,8 @@ public class ByteAndCharStreamsGuide {
         OutputStream to = Files.asByteSink(new File("d://1.txt"), FileWriteMode.APPEND).openStream();
         ByteStreams.copy(form,to);
         Reader reader=Files.asCharSource(new File("d://2.txt"), Charsets.UTF_8).openStream();
-        Writer writer=Files.asCharSink(new File("d://1.txt"),Charsets.UTF_8).openStream();
+        Writer writer=Files.asCharSink(new File("d://1.txt "),Charsets.UTF_8).openStream();
         CharStreams.copy(reader,writer);
+
     }
 }

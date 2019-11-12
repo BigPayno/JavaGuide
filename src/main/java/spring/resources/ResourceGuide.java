@@ -27,6 +27,7 @@ public class ResourceGuide {
         System.out.println(classPathResource.exists());
         ServletContextResource warResource;
         UrlResource urlResource=new UrlResource("ftp://payno:9527@127.0.0.1/01.json");
+
         System.out.println(urlResource.exists());
         /*String result2=ByteSource.wrap(ByteStreams.toByteArray(urlResource.getInputStream()))
                 .asCharSource(Charsets.UTF_8).read();

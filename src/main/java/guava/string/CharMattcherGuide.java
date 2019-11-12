@@ -16,6 +16,7 @@ public class CharMattcherGuide {
         CharMatcher.javaDigit();
         CharMatcher.javaLetter();
         CharMatcher.javaLetterOrDigit();
+        CharMatcher.forPredicate(Character::isDigit);
     }
     private static void function(){
         /**
@@ -41,6 +42,12 @@ public class CharMattcherGuide {
     }
 
     public static void main(String[] args) {
-        function();
+        String result=CharMatcher.forPredicate(character-> character.charValue()=='A')
+                .retainFrom("ABAAAAA");
+        System.out.println(result);
+
+        String result2=CharMatcher.forPredicate(character->CharMatcher.whitespace().matches(character.charValue()))
+                .replaceFrom("aab aab","c");
+        System.out.println(result2);
     }
 }
