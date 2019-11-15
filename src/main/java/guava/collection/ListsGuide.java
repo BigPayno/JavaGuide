@@ -13,7 +13,7 @@ import java.util.List;
 public class ListsGuide {
     public static void main(String[] args) {
         List<String> characters= Splitter.fixedLength(1).splitToList("hello,payno");
-        //分割
+        //分割zxf
         Lists.partition(characters,4).forEach(list->{
             list.forEach(System.out::printf);
             System.out.println();

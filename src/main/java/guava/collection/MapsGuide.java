@@ -15,7 +15,7 @@ import java.util.Random;
  */
 public class MapsGuide {
     public static void main(String[] args) {
-        //Iterable转Map
+        //Iterable转Map,不会去重
         List<Character> characters= Lists.charactersOf("helo,payn!");
         Map<Integer,Character> map= Maps.uniqueIndex(characters,character->characters.indexOf(character));
         map.forEach((k,v)->{
