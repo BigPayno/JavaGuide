@@ -8,5 +8,6 @@ package jdkguide.print;
 public class PrintfGuide {
     public static void main(String[] args) {
         System.out.printf("Line %d:%s",1,"payno");
+        System.out.println(String.format("Line %d:%s",1,"payno"));
     }
 }
