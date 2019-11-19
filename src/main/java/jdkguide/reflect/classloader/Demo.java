@@ -1,15 +1,12 @@
-package jdkguide.classloader;
+package jdkguide.reflect.classloader;
 
 import com.google.common.io.ByteStreams;
-import jdkguide.print.PrintfGuide;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.core.OverridingClassLoader;
 import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.Resource;
 import org.springframework.util.ClassUtils;
 
 import java.io.IOException;
-import java.nio.file.FileSystem;
 
 /**
  * @author payno

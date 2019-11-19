@@ -1,11 +1,10 @@
-package jdkguide.classloader;
+package jdkguide.reflect.classloader;
 
 import com.google.common.io.ByteStreams;
 import org.springframework.core.io.DefaultResourceLoader;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
