@@ -10,6 +10,15 @@ import java.util.Vector;
  * @author payno
  * @date 2019/11/20 10:45
  * @description
+ *
+ *         AppClassLoader  load classpath java.class
+ *         ExtClassLoader load javax.class
+ *         BootstrapClassLoader load jre/jdk.class
+ *
+ *         ExtClassLoader和AppClassLoader处于同级，均继承自URLClassLoader，
+ *         URLClassLoader继承自SecureClassLoader，SecureClassLoader继承自ClassLoader，
+ *         ClassLoader即为最终的顶级抽象类
+ *
  */
 public class ClassLoaderFieldGuide {
     public static void display(Object [] array){
@@ -25,5 +34,6 @@ public class ClassLoaderFieldGuide {
         ClassLoader classLoader=ClassLoaderFieldGuide.class.getClassLoader();
         findClassesLoadByClassLoader(classLoader);
         ClassUtils.isPresent("jdkguide.reflect.classloader.ClassLoaderFieldGuide",classLoader);
+        System.out.println(classLoader.getParent().getClass());
     }
 }
