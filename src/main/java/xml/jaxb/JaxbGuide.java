@@ -1,12 +1,14 @@
 package xml.jaxb;
 
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.JSONPath;
 import com.google.common.io.ByteSink;
 import com.google.common.io.ByteSource;
 import com.google.common.io.CharSource;
 import com.google.common.io.Files;
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.data.web.JsonPath;
 import utils.charset.Charsets;
 
 import javax.xml.bind.JAXBContext;
@@ -61,5 +63,11 @@ public class JaxbGuide {
         System.out.println(xml);
         People people=Xmls.toJavaObject(CharSource.wrap(xml),People.class);
         System.out.println(people);
+
+
+        String userName="";
+        JSONObject js=new JSONObject();
+        String userId=(String) JSONPath.read(
+                js.toJSONString(),String.format("$.userList[@name=%s].userId",userName));
     }
 }
