@@ -11,6 +11,8 @@ import java.util.concurrent.RecursiveTask;
  * @author payno
  * @date 2019/10/29 15:32
  * @description
+ *      ForkJoin适合进行计算Cpu任务，不适合Io密集型
+ *      而且推荐用流
  */
 public class ForkJoinGuide1 {
     private ForkJoinPool pool=new ForkJoinPool();
