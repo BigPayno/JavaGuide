@@ -23,6 +23,7 @@ public class Enhancers {
         public T getProxy(){
             return targetClass.cast(Enhancer.create(targetClass,this));
         }
+        @Override
         public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
             return methodProxy.invokeSuper(target,objects);
         }
