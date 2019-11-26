@@ -1,4 +1,4 @@
-package jdkguide.nio.common;
+package jdkguide.nio.buffer;
 
 import java.nio.ByteBuffer;
 

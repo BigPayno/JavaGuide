@@ -1,4 +1,4 @@
-package jdkguide.nio.common.http;
+package jdkguide.nio.channel.http;
 
 import java.net.InetSocketAddress;
 import java.nio.channels.SelectionKey;

@@ -1,7 +1,6 @@
-package jdkguide.nio.common.http;
+package jdkguide.nio.channel.http;
 
 import com.google.common.base.Splitter;
-import com.google.common.collect.ImmutableList;
 import com.sun.net.httpserver.Headers;
 
 import java.io.IOException;

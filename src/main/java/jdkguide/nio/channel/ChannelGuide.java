@@ -1,4 +1,4 @@
-package jdkguide.nio.common;
+package jdkguide.nio.channel;
 
 import com.google.common.collect.ImmutableList;
 

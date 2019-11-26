@@ -1,4 +1,6 @@
-package jdkguide.nio.common;
+package jdkguide.nio.files;
+
+import jdkguide.nio.buffer.ByteBuffers;
 
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;

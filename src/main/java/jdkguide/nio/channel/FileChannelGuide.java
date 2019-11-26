@@ -1,4 +1,4 @@
-package jdkguide.nio.common;
+package jdkguide.nio.channel;
 
 import guava.time.StopWatch;
 import guava.time.StopWatchRunnable;
@@ -13,7 +13,7 @@ import java.nio.channels.FileChannel;
  * @date 2019/11/4 15:02
  * @description
  */
-public class ChannelTest {
+public class FileChannelGuide {
     public static void main(String[] args){
         StopWatchRunnable.time("Channel 基于 ByteBuffer 复制文件",()->{
             try(FileChannel sourceChannel=new RandomAccessFile("d:/HP LoadRunner 11.00安装+破解+汉化.rar","r").getChannel();

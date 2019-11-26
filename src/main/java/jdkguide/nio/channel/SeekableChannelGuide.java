@@ -1,4 +1,6 @@
-package jdkguide.nio.common;
+package jdkguide.nio.channel;
+
+import jdkguide.nio.buffer.ByteBuffers;
 
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
@@ -8,6 +10,7 @@ import java.nio.channels.SeekableByteChannel;
  * @author payno
  * @date 2019/11/4 14:45
  * @description
+ *      FileChannel
  */
 public class SeekableChannelGuide {
     public static void main(String[] args) throws Exception{
