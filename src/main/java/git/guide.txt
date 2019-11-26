@@ -1,0 +1,7 @@
+团队合作上传基本流程:
+1.stash changes 保存本地git和工作空间的变化，使本地git返回刚pull的版本
+2.pull from remote 从远程拉下最新的git版本
+3.un stash changes 将变化释放回来
+4.handle conflict 处理冲突
+5.commit to local 提交到本地
+6.push to remote 提交本地git
