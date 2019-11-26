@@ -145,6 +145,12 @@
             <artifactId>jersey-media-multipart</artifactId>
             <version>2.26</version><!--$NO-MVN-MAN-VER$-->
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-compress</artifactId>
+            <version>1.14</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

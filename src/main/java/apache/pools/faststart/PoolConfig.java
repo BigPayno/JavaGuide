@@ -1,4 +1,4 @@
-package apachepools.faststart;
+package apache.pools.faststart;
 
 import org.apache.commons.pool2.impl.GenericObjectPool;
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig;

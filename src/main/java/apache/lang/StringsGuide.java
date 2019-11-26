@@ -1,4 +1,4 @@
-package apcahelang;
+package apache.lang;
 
 import org.apache.commons.lang3.StringUtils;
 

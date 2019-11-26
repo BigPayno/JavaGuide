@@ -1,4 +1,4 @@
-package apachepools.faststart;
+package apache.pools.faststart;
 
 import lombok.Data;
 
