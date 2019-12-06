@@ -1,4 +1,4 @@
-package netty.common;
+package netty.demos.common;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;

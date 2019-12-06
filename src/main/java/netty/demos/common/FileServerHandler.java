@@ -1,4 +1,4 @@
-package netty.common;
+package netty.demos.common;
 
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;

@@ -1,4 +1,4 @@
-package netty.base.nio;
+package netty.demos.base.nio;
 
 import java.io.IOException;
 import java.nio.channels.ClosedChannelException;

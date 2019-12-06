@@ -1,4 +1,4 @@
-package netty.base.nio;
+package netty.demos.base.nio;
 
 import lombok.extern.slf4j.Slf4j;
 
