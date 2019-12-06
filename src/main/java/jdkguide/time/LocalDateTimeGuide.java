@@ -17,6 +17,7 @@ public class  LocalDateTimeGuide {
         LocalDate localDate=LocalDate.now();
         LocalTime localTime=LocalTime.now();
         LocalDateTime localDateTime=LocalDateTime.now();
+        LocalDateTime.now(ZoneOffset.of("+8"));
     }
 
     private static void format(){
