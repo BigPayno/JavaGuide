@@ -66,7 +66,7 @@ public class MethodReferenceGuide {
     }
 
     @Test
-    public void test2(){
+    public void test2() throws Exception{
         WeakReference<String> str1=new WeakReference<>(new String("a"));
         WeakReference<String> str2=new WeakReference<>(new String("b"));
         WeakReference<String> str3=new WeakReference<>(new String("c"));
@@ -79,10 +79,11 @@ public class MethodReferenceGuide {
         MoreExecutors.addDelayedShutdownHook(service,10, TimeUnit.SECONDS);
         String str2Plus=str2.get();
         /**
-         * 神奇的事情
+         * 应该是主线程执行过快，异步线程还未执行到强引用
+         * 等到异步线程执行到强引用时，对象已经被清除
          */
         async(str3,service);
-        service.submit(()->{System.out.println();});
+        Thread.sleep(1000);
         async(str4,service);
         //async2(str5.get(),service);
         System.gc();
