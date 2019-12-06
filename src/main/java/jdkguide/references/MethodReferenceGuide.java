@@ -71,24 +71,26 @@ public class MethodReferenceGuide {
         WeakReference<String> str2=new WeakReference<>(new String("b"));
         WeakReference<String> str3=new WeakReference<>(new String("c"));
         WeakReference<String> str4=new WeakReference<>(new String("d"));
-        WeakReference<String> str5=new WeakReference<>("e");
-        ExecutorService service=new ThreadPoolExecutor(0, Integer.MAX_VALUE,
+        WeakReference<String> str5=new WeakReference<>(new String("e"));
+        WeakReference<String> str6=new WeakReference<>("f");
+        ExecutorService service=new ThreadPoolExecutor(2, 2,
                 60L, TimeUnit.SECONDS,
-                new SynchronousQueue<Runnable>());
+                new LinkedBlockingQueue<Runnable>());
         MoreExecutors.addDelayedShutdownHook(service,10, TimeUnit.SECONDS);
         String str2Plus=str2.get();
-        async(str3,service);
         /**
-         * so !!!
-         *  service.submit(()->{System.out.println();});
-         *  也会发生。。。
+         * 神奇的事情
          */
-        //async2(str4.get(),service);
+        async(str3,service);
+        service.submit(()->{System.out.println();});
+        async(str4,service);
+        //async2(str5.get(),service);
         System.gc();
         System.out.println(str1.get());
         System.out.println(str2.get());
         System.out.println(str3.get());
         System.out.println(str4.get());
         System.out.println(str5.get());
+        System.out.println(str6.get());
     }
 }
