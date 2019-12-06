@@ -1,5 +1,10 @@
 package jdkguide.thread.threadlocal;
 
+import com.google.common.util.concurrent.MoreExecutors;
+import pattern.callBack.Executor;
+
+import java.util.concurrent.*;
+
 /**
  * @author payno
  * @date 2019/11/8 16:38
@@ -18,4 +23,27 @@ package jdkguide.thread.threadlocal;
  *  key就是 ThreadLocal 对象自己，同时，很重要的一点:就ThreadLocal把 Map 存储在当前线程对象里面。
  */
 public class ThreadLocalGuide {
+    public static void main(String[] args) throws Exception{
+        ThreadLocal<String> threadNames=new ThreadLocal<>();
+        ExecutorService service= new ThreadPoolExecutor(
+                4,4,10, TimeUnit.SECONDS,
+                //new ArrayBlockingQueue<Runnable>(4));
+                new LinkedBlockingQueue<Runnable>());
+        /**
+         * 加一个钩子，防止主线程跑完，线程池就挂了，没法打印出来
+         */
+        MoreExecutors.addDelayedShutdownHook(service,4,TimeUnit.SECONDS);
+        for(int i=0;i<4;i++){
+            service.submit(()->{
+                threadNames.set(Thread.currentThread().getName());
+                System.out.println(Thread.currentThread().getName()+" set "+threadNames.get());
+            });
+        }
+        Thread.sleep(3000);
+        for (int i=0;i<10;i++){
+            service.submit(()->{
+                System.out.println(Thread.currentThread().getName()+" get "+threadNames.get());
+            });
+        }
+    }
 }
