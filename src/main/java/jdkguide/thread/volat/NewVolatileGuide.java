@@ -102,9 +102,9 @@ public class NewVolatileGuide {
         }).start();
         new Thread(()->{
             /**
-             * 线程休眠也会刷新工作空间
+             * 线程休眠不会刷新工作空间
              */
-            sleep(1000);
+            sleep(500);
             while(true){
                 if(obj.source){
                     obj.count.getAndIncrement();
