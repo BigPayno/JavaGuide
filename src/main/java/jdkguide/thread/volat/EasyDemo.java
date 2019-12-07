@@ -16,8 +16,9 @@ public class EasyDemo {
     public static void main(String[] args) throws Exception{
         EasyDemo obj=new EasyDemo();
         new Thread(()->{
-            while(obj.running){ }
             obj.semaphore.getAndSet(true);
+            while(obj.running){ }
+            System.out.println("stop!");
         }).start();
         /**
          * 主线程休眠保证
@@ -25,8 +26,9 @@ public class EasyDemo {
          */
         Thread.sleep(1000);
         obj.running=false;
-        while (obj.semaphore.get()){
-            System.out.println("The thread is not running!");
+        if (obj.semaphore.get()){
+            System.out.println("The thread has running!");
         }
+        System.out.println("main stop");
     }
 }
