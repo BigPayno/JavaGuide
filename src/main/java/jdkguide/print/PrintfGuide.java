@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @date 2019/10/28 16:39
  * @description
  *  加Component是为了测试Spring的ClassLoader
+ *
+ *  Important: println printf都是会进入同步代码块的
  */
 @Data
 public class PrintfGuide {
