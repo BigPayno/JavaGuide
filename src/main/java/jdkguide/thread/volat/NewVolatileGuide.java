@@ -14,6 +14,7 @@ import java.util.concurrent.atomic.AtomicLong;
 public class NewVolatileGuide {
     boolean source=false;
     AtomicLong count=new AtomicLong(0);
+    AtomicLong count2=new AtomicLong(0);
     private void sleep(long millis){
         try{
             Thread.sleep(millis);
@@ -47,24 +48,72 @@ public class NewVolatileGuide {
     @Test
     public void test2(){
         NewVolatileGuide obj=new NewVolatileGuide();
+        final Object lock=new Object();
         new Thread(()->{
             sleep(1000);
             obj.source=true;
         }).start();
         new Thread(()->{
-            sleep(2000);
             /**
              * 在线程进入同步代码块时会检查自己的工作空间并更新
              */
-            synchronized (new Object()){
+            while (!obj.source){
+                /**
+                 * 保证每次循环都读取新值
+                 */
+                synchronized (lock){
+                    if(obj.source){
+                        obj.count.getAndIncrement();
+                    }
+                }
+            }
+            /**
+             * 防止结束判断后更新为true跳出循环，进行弥补
+             */
+            if(obj.source){
+                if(obj.count.get()==0){
+                    obj.count.getAndIncrement();
+                }
+            }
+        }).start();
+        new Thread(()->{
+            while (!obj.source){
+                if(obj.source){
+                    obj.count2.getAndIncrement();
+                }
+            }
+            if(obj.source){
+                if(obj.count2.get()==0){
+                    obj.count2.getAndIncrement();
+                }
+            }
+        }).start();
+        sleep(2000);
+        System.out.println(obj.count.get());
+        System.out.println(obj.count2.get());
+    }
+
+    @Test
+    public void test3(){
+        NewVolatileGuide obj=new NewVolatileGuide();
+        new Thread(()->{
+            sleep(1000);
+            obj.source=true;
+        }).start();
+        new Thread(()->{
+            /**
+             * 线程休眠也会刷新工作空间
+             */
+            sleep(1000);
+            while(true){
                 if(obj.source){
                     obj.count.getAndIncrement();
                 }
             }
         }).start();
         sleep(3000);
-        if(obj.count.get()==1){
-            System.out.println("see it after thread visiting sync");
+        if(obj.count.get()!=0){
+            System.out.println("see it after thread sleep");
         }
     }
 }
