@@ -1,5 +1,7 @@
 package jdkguide.thread.volat;
 
+import org.junit.Test;
+
 /**
  * @author payno
  * @date 2019/12/7 15:08
@@ -24,5 +26,16 @@ public class T {
         }).start();
         Thread.sleep(1000);
         t.running=false;
+    }
+
+    public void change(boolean a){
+        a=false;
+    }
+
+    @Test
+    public void test(){
+        boolean a=true;
+        change(a);
+        System.out.println(a);
     }
 }
