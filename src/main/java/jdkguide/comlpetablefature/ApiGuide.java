@@ -11,6 +11,18 @@ import java.util.concurrent.ForkJoinPool;
  * @author payno
  * @date 2019/11/19 15:58
  * @description
+ *      thenAccept:
+ *      根据上次执行结果进行继续执行的CP
+ *      A->A1->A2
+ *      thenCompose:
+ *      根据上次执行结果得到新的CP
+ *      A->A1
+ *      A->A2
+ *      thenCombine:
+ *      合并两个CP成为1个
+ *      A1
+ *         ->A3
+ *      A2
  */
 public class ApiGuide {
     public static class Base{
@@ -103,8 +115,12 @@ public class ApiGuide {
          * 和thenCombine不同
          * 这里会对一个元素进行多次处理
          * 而thenCombine是对多个元素进行一次处理
+         * 和thenAccept不同在于
+         *      A->A1->A2
+         *      A->A1
+         *      A->A2
          * A-1>A-2->A-3
-         *
+         *thenCombine
          * A-1>
          *      AB-1
          * B-1>
@@ -113,7 +129,7 @@ public class ApiGuide {
         public void reduceSync() throws Exception{
             CompletableFuture.supplyAsync(base::supplier)
                     .thenCompose(s->CompletableFuture.supplyAsync(()->s+"abc"))
-                    .thenCompose(s->CompletableFuture.supplyAsync(()->s+"abc"))
+                    .thenCompose(s->CompletableFuture.supplyAsync(()->s+"ab"))
                     .whenComplete((s, throwable) -> {
                         System.out.println(s);
                     });
