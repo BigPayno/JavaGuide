@@ -1,6 +1,7 @@
 package spring.reflect.annotation;
 
 import org.springframework.core.annotation.AnnotatedElementUtils;
+import org.springframework.core.annotation.AnnotationUtils;
 
 /**
  * @author payno
@@ -18,5 +19,9 @@ public class JdkGuide {
        System.out.println(com);
        Com com2= AnnotatedElementUtils.getMergedAnnotation(JdkGuide.class,Com.class);
        System.out.println(com2);
+       /**
+        * 重点来了，需要清除缓存的
+        */
+       AnnotationUtils.clearCache();
     }
 }
