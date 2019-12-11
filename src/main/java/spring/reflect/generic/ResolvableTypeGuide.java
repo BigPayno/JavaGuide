@@ -1,6 +1,4 @@
-package spring.v4.generic;
-
-import org.springframework.core.ResolvableType;
+package spring.reflect.generic;
 
 /**
  * @author payno
