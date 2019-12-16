@@ -1,4 +1,4 @@
-package jdkplus.juc;
+package jdkguide.juc;
 
 /**
  * @author payno

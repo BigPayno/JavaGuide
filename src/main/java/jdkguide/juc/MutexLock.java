@@ -1,6 +1,5 @@
-package jdkplus.juc;
+package jdkguide.juc;
 
-import javax.naming.OperationNotSupportedException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 import java.util.concurrent.locks.Condition;
