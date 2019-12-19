@@ -1,11 +1,7 @@
 package xml.jaxb;
 
-import com.alibaba.fastjson.JSONObject;
 import com.google.common.base.Charsets;
-import com.google.common.io.ByteSink;
-import com.google.common.io.CharSink;
 import com.google.common.io.CharSource;
-import com.google.common.io.Files;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.xml.bind.JAXBContext;
@@ -13,9 +9,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import java.io.IOException;
 import java.io.Reader;
-import java.io.StringReader;
 import java.io.StringWriter;
-import java.nio.charset.Charset;
 
 /**
  * @author payno

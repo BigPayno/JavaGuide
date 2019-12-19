@@ -89,7 +89,7 @@ public class HttpMessageConverterGuide {
     }
 
     @Test
-    public void test(){
+    public void customSupport(){
         RestTemplate restTemplate=new RestTemplate();
         /**
          * 在请求发送出去前进行拦截
@@ -120,5 +120,25 @@ public class HttpMessageConverterGuide {
                 Lists.newArrayList(new StringHttpMessageConverter()));
         ResponseEntity<String> result2=restTemplate.postForEntity("http://localhost:8080/body/text","123",String.class);
         System.out.println(result2.getBody());
+    }
+
+    /**
+     * 基于Xml的RestTemplate
+     */
+    @Test
+    public void xml(){
+        RestTemplate template=new RestTemplate();
+        template.setInterceptors(Collections.singletonList(new ClientHttpRequestInterceptor() {
+            @Override
+            public ClientHttpResponse intercept(HttpRequest httpRequest, byte[] bytes, ClientHttpRequestExecution execution) throws IOException {
+                httpRequest.getHeaders().set("Content-Type", "application/xml");
+                httpRequest.getHeaders().set("Accept","application/xml");
+                return execution.execute(httpRequest,bytes);
+            }
+        }));
+        String source="<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
+                "<Service><Head><serviceId>Nz001</serviceId><serviceName>Nz_Risk</serviceName></Head><Body><request><cityNm>gz</cityNm></request></Body></Service>";
+        ResponseEntity<String> response=template.postForEntity("http://localhost:8080/esb/request",source,String.class);
+        System.out.println(response.getBody());
     }
 }
