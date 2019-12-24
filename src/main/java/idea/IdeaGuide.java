@@ -13,5 +13,7 @@ public class IdeaGuide {
      * 4.未来的我用于study的代码可以添加Facade信息来记录学习链
      *      for example:
      *          1.MvcFlow@1.0 Servlet运行流程 $date$ $time$
+     * 5.开启RunDashboard
+     *
      */
 }
