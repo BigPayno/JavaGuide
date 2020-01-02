@@ -13,5 +13,8 @@ public class EcpliseGuide {
      * 1.Compiler模块必须配置好jdk版本及compiler插件版本
      * 2.关闭自动build
      * 3.clean->install
+     *
+     * ex:必须更新maven.pom（maven/update），否则默认执行缓存配置（猜测，导致Q类始终无法使用，即使包和classes文件夹都已经生成）
+     *      而且project/clean会清除class中的Q.class
      */
 }
