@@ -32,6 +32,7 @@ public abstract class ReportSyncer implements ReportTemplate{
             times--;
             reportData=findReportResultFromEsb(context.buildReportResultReqEO());
             context.setReportData(reportData);
+            //这里可以利用事件回调拓展
         }catch (ReportException e) {
             if (times > 0) {
                 System.out.println(times);
