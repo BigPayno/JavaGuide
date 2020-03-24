@@ -1,25 +1,17 @@
 package xml.xpath;
 
-import com.alibaba.fastjson.JSONObject;
-import com.google.common.io.ByteSource;
-import com.google.common.io.Files;
-import org.dom4j.*;
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.dom4j.Node;
 import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-import org.xml.sax.helpers.DefaultHandler;
-import utils.charset.Charsets;
 
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
 import java.io.*;
-import java.nio.charset.Charset;
 import java.util.List;
 
 /**

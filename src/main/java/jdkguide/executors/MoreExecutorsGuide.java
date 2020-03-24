@@ -1,9 +1,12 @@
 package jdkguide.executors;
 
+import com.google.common.collect.Collections2;
 import com.google.common.util.concurrent.*;
 import org.junit.Test;
 
 import javax.annotation.Nullable;
+import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.*;
 
 /**
