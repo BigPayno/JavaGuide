@@ -1,6 +1,7 @@
 package fastjson;
 
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.parser.Feature;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import org.junit.Test;
 
@@ -36,7 +37,7 @@ import org.junit.Test;
  * WriteEnumUsingName  含义
  */
 public class JSONFeatureGuide {
-    private static final String jsonString="{\"a\":\"a\",\"b\":{\"c\":\"c\",\"d\":\"\",\"e\":5}}";
+    private static final String jsonString="{\"a\":\"a\",\"b\":{\"c\":\"c\",\"f\":\"\",\"e\":5}}";
     private static JSONObject json=JSONObject.parseObject(jsonString);
 
     @Test
@@ -45,5 +46,13 @@ public class JSONFeatureGuide {
         System.out.println("after format:"+JSONObject.toJSONString(json,true));
         System.out.println("format + nullStringAsEmpty"+JSONObject.toJSONString(json, SerializerFeature.PrettyFormat,SerializerFeature.WriteNullStringAsEmpty));
         System.out.println("nonStringValueAsString"+JSONObject.toJSONString(json,SerializerFeature.WriteNonStringValueAsString));
+    }
+
+    @Test
+    public void sorted(){
+        System.out.println(json);
+        System.out.println(JSONObject.parseObject(jsonString, Feature.SortFeidFastMatch));
+        System.out.println(JSONObject.toJSONString(json,SerializerFeature.SortField));
+        System.out.println(JSONObject.toJSONString(json,SerializerFeature.MapSortField));
     }
 }

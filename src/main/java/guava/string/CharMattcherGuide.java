@@ -7,7 +7,7 @@ import com.google.common.base.CharMatcher;
  * @date 2019/8/13 19:58
  * @description
  */
-public class CharMattcherGuide {
+public class  CharMattcherGuide {
     /**
      * 匹配器
      */
