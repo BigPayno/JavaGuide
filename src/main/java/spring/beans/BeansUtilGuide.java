@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.junit.Test;
 import org.springframework.beans.BeanUtils;
-import org.springframework.data.repository.NoRepositoryBean;
 
 /**
  * @author payno

@@ -31,7 +31,7 @@ public class JwtGuide {
          */
         Map<String,Object> claims=new HashMap<>();
         claims.put("username","chad");
-        claims.put("password","payno");
+        claims.put("password", "payno");
         /**
          * 密钥
          */

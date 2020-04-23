@@ -1,11 +1,7 @@
 package spring.web;
 
-import cn.hutool.http.HttpResponse;
 import com.google.common.collect.Lists;
 import com.google.common.io.ByteStreams;
-import com.google.common.io.CharStreams;
-import com.google.common.primitives.Bytes;
-import com.google.common.primitives.Chars;
 import org.junit.Test;
 import org.springframework.http.*;
 import org.springframework.http.client.ClientHttpRequestExecution;
@@ -15,12 +11,9 @@ import org.springframework.http.converter.*;
 import org.springframework.web.client.RestTemplate;
 import utils.charset.Charsets;
 
-import java.io.ByteArrayInputStream;
-import java.io.FilterInputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
-import java.nio.charset.Charset;
 import java.util.Collections;
 
 /**
@@ -52,7 +45,7 @@ public class HttpMessageConverterGuide {
          * 支持什么类型的MediaType
          */
         protected StringPaynoMediaConverter() {
-            super(new MediaType("application","payno", Charsets.UTF_8));
+            super(new MediaType("application", "payno", Charsets.UTF_8));
         }
 
         /**

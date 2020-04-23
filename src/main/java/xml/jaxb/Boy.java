@@ -15,5 +15,5 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Boy {
-    private String name="payno";
+    private String name= "payno";
 }

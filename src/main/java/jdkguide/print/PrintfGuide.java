@@ -35,8 +35,8 @@ public class PrintfGuide {
     public Joiner joiner;
 
     public static void main(String[] args) {
-        System.out.printf("Line %d:%s",1,"payno");
-        System.out.println(String.format("Line %d:%s",1,"payno"));
+        System.out.printf("Line %d:%s",1, "payno");
+        System.out.println(String.format("Line %d:%s",1, "payno"));
     }
 
     public void say(){

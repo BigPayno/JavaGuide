@@ -2,7 +2,6 @@ package guava.eventbus;
 
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
-import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  * @author payno

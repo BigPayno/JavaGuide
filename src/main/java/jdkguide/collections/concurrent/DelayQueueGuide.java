@@ -3,7 +3,6 @@ package jdkguide.collections.concurrent;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Ordering;
 import lombok.Data;
-import org.springframework.util.Assert;
 
 import java.util.Comparator;
 import java.util.List;
@@ -59,7 +58,7 @@ public class DelayQueueGuide {
     public static List<DelayMessage> delayMessages= ImmutableList.of(
             new DelayMessage(1,"hello",1,TimeUnit.SECONDS),
             new DelayMessage(2,"payne",3,TimeUnit.SECONDS),
-            new DelayMessage(3,"payno",1,TimeUnit.SECONDS)
+            new DelayMessage(3, "payno",1,TimeUnit.SECONDS)
     );
 
     public static class PriorityTest{

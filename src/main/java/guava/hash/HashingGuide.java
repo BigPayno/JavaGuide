@@ -2,8 +2,6 @@ package guava.hash;
 
 import com.google.common.hash.Hashing;
 
-import java.security.Key;
-
 /**
  * @author payno
  * @date 2019/10/12 17:41
