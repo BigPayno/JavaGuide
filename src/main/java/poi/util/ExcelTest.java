@@ -37,9 +37,11 @@ public class ExcelTest {
                 .setExcelHeaderInfos(infos)
                 .getWorkbook();
 
+        //打断点观察非法字符，防止xlsx插入非法字符导致xlsx编码失败
+
         File file = Paths.get("d:/aa.xlsx").toFile();
         workbook.write(
                 Files.asByteSink(file).openBufferedStream());
-        ByteEncoder.encodeFile(file, Charsets.ISO_8859_1,Charsets.UTF_8);
+        ByteEncoder.encodeFile(file,Paths.get("d:/aaa.xlsx").toFile(), Charsets.ISO_8859_1,Charsets.UTF_8);
     }
 }
