@@ -43,6 +43,6 @@ public class JSONPathTest {
     public static void main(String[] args) throws Exception{
         JSONObject report= JSONObject.parseObject(
                 Files.asCharSource(Paths.get("C:\\Users\\DELL\\Documents\\个人征信报告20191226-样例报文.json").toFile(), Charsets.GBK).read());
-        System.out.println(rule001(report));
+        System.out.println(JSON.eval(report,"$."));
     }
 }

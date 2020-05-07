@@ -21,7 +21,7 @@ import java.nio.channels.ScatteringByteChannel;
  */
 public class ScatterChannelGuide {
     public static void main(String[] args) throws Exception{
-        ScatteringByteChannel channel=new RandomAccessFile("d:/test.json","rw").getChannel();
+        ScatteringByteChannel channel=new RandomAccessFile("d:/jsonpath.json","rw").getChannel();
         ByteBuffer byteBuffer1=ByteBuffer.allocate(1<<10);
         ByteBuffer byteBuffer2=ByteBuffer.allocate(1<<10);
         ByteBuffer[] byteBuffers={byteBuffer1,byteBuffer2};

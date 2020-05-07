@@ -21,7 +21,7 @@ import java.io.File;
 public class JerseyExceptionDemo {
     public static void main(String[] args) {
         FormDataMultiPart form = new FormDataMultiPart();
-        form.bodyPart(new FileDataBodyPart("file", new File("d://test.json")));
+        form.bodyPart(new FileDataBodyPart("file", new File("d://jsonpath.json")));
         Entity<FormDataMultiPart> entity = Entity.entity(form, MediaType.MULTIPART_FORM_DATA_TYPE);
         Response response = ClientBuilder.newClient()
                 .register(MultiPartFeature.class)

@@ -34,7 +34,7 @@ public class ZipSystemGuide {
              */
             ZipPath zipPath=zipSystem.getPath("\\gz");
             copyZip(zipPath);
-            //Files.copy(zipPath,Paths.get("d:/compress/gz"));
+            //Files.copy(zipPath,JsonPaths.get("d:/compress/gz"));
         }
     }
 

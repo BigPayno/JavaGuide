@@ -27,7 +27,7 @@ public class Test {
         List<String> lines = Files.asCharSource(from, Charsets.UTF_8).readLines().stream()
                 .filter(line->!Strings.isNullOrEmpty(CharMatcher.javaIsoControl().removeFrom(line)))
                 .collect(Collectors.toList());
-        //List<String> lines = java.nio.file.Files.readAllLines(Paths.get("D:\\350 all parameters.par.txt\""),Charsets.UTF_8);
+        //List<String> lines = java.nio.file.Files.readAllLines(JsonPaths.get("D:\\350 all parameters.par.txt\""),Charsets.UTF_8);
         for (int i =0;i<lines.size();i++){
             XSSFRow xsRow1 = xsSheet.createRow(i);
             String[] s= lines.get(i).split("\t");
