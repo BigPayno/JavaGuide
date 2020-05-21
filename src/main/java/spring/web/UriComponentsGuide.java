@@ -3,9 +3,6 @@ package spring.web;
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Lists;
 import org.junit.Test;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.util.LinkedMultiValueMap;
@@ -16,7 +13,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.Base64;
 import java.util.Collections;
-import java.util.Map;
 
 /**
  * @author payno
