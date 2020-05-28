@@ -8,6 +8,7 @@ import javax.ws.rs.client.Client;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.stream.Stream;
 
 /**
  * @author payno
@@ -25,6 +26,7 @@ public abstract class ClientBuilder extends javax.ws.rs.client.ClientBuilder {
             sslContext.init(null, TRUST_ALL_CERTS, new java.security.SecureRandom());
         } catch (Exception e) {
             e.printStackTrace();
+            Stream.of()
         }
         return newBuilder().sslContext(sslContext).hostnameVerifier(ALL_HOSTS_VALID)
                 .build();
